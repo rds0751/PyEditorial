@@ -77,16 +77,11 @@ TEMPLATES = [
 WSGI_APPLICATION = 'PyEditorial.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
+import dj_database_url
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
+    'default': dj_database_url.config(
+        default='postgres://trsozelpnmywpi:9dbc9feaa610f13a392e5d7b2ec6cb0612ec5f7c678a32e0b284fb1a9c562c24@ec2-52-209-134-160.eu-west-1.compute.amazonaws.com:5432/d1vo189aho0ctb',
+        conn_max_age=600)}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
