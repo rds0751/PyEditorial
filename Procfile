@@ -1,3 +1,1 @@
-web: gunicorn ApproApp.wsgi --log-file -
-
-
+web: gunicorn PyEditorial.wsgi --log-file -
